@@ -140,19 +140,18 @@ npm install --save-dev jest
 ```
 
 ```json
-  package.json
-  ______________________________________
- {
-  "scripts": {
-    "test": "jest --notify --config=config.json"
+  {
+    "scripts": {
+      "test": "jest --notify --config=config.json"
+    }
   }
-}
  ```
 
-```
-
 Additional Configuration Using TypeScript
+
+```linux
 npm init jest@latest
+```
 
 ```linux
 npm install --save-dev @babel/preset-typescript @jest/globals
@@ -165,6 +164,27 @@ npm install --save-dev @babel/preset-typescript @jest/globals
     '@babel/preset-typescript',
   ],
 };
+```
+
+```json
+npm i ts-jest -D
+```
+
+Create jest.config.js in your root dir
+
+```json
+module.exports = {
+  "roots": [
+    "<rootDir>/src"
+  ],
+  "testMatch": [
+    "**/__tests__/**/*.+(ts|tsx|js)",
+    "**/?(*.)+(spec|test).+(ts|tsx|js)"
+  ],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+}
 ```
 
 Create folder "test"

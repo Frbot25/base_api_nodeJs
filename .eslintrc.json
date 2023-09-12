@@ -23,5 +23,14 @@
         "semi": true
       }
     ]
-  }
+  },
+  "ignorePatterns": ["node_modules/", "dist/"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+      }
+    }
+  ]
 }
